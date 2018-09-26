@@ -1,4 +1,4 @@
-# PaintSteps
+# MessageView
 
 A simple view that can act as a message view, similar to snackbar.
 
