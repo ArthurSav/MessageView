@@ -21,3 +21,13 @@ MessageBar messageBar = MessageBar.build(MainActivity.this)
 ```java
 MessageBar.dismiss(MainActivity.this);
 ```
+
+## Install
+
+```
+maven { url 'https://jitpack.io' }
+```
+
+```
+implementation 'com.github.ArthurSav:MessageView:57ca549d30'
+```
