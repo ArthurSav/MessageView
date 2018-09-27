@@ -1,7 +1,8 @@
 package com.arthursaveliev.messageview.sample;
 
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +11,7 @@ import com.arthursaveliev.messageview.MessageBar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
   private MessageBar messageBar;
 
@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         List<View> messages = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-          View v = LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_error, null, false);
+          View v = LayoutInflater.from(MainActivity.this)
+              .inflate(R.layout.layout_error, null, false);
           TextView txtError = v.findViewById(R.id.textView);
           txtError.setText("This is error " + i);
           txtError.setOnClickListener(MainActivity.this);
           messages.add(v);
         }
-
-         messageBar = MessageBar.build(MainActivity.this)
+        messageBar = MessageBar.build(MainActivity.this)
             .addMessages(messages)
             .setBackgroundColor(getResources().getColor(R.color.default_action_color))
             .create();

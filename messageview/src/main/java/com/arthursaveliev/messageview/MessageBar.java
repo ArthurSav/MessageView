@@ -143,6 +143,26 @@ public class MessageBar {
             return this;
         }
 
+        public Builder setIndicatorTint(int color){
+            params.indicatorTint = color;
+            return this;
+        }
+
+        public Builder setIndicatorSelectedTint(int color){
+            params.indicatorSelectedTint = color;
+            return this;
+        }
+
+        public Builder setIndicatorItemSize(int indicatorItemSize){
+            params.indicatorItemSize = indicatorItemSize;
+            return this;
+        }
+
+        public Builder setIndicatorItemScale(float indicatorItemScale){
+            params.indicatorItemScale = indicatorItemScale;
+            return this;
+        }
+
         public Builder setBackgroundColor(int color){
             params.backgroundColor = color;
             return this;
@@ -160,6 +180,10 @@ public class MessageBar {
     }
 
     final static class Params {
+        public Integer indicatorTint;
+        public Integer indicatorSelectedTint;
+        public Integer indicatorItemSize;
+        public Float indicatorItemScale;
         public int backgroundColor;
         public Long duration;
         public long animationDuration = 300;

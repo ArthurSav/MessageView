@@ -33,6 +33,11 @@ final class MessageView extends FrameLayout {
     private int[] animationOut;
     private int backgroundColor;
 
+    public Integer indicatorTint;
+    public Integer indicatorSelectedTint;
+    public Integer indicatorItemSize;
+    public Float indicatorItemScale;
+
 
     public MessageView(@NonNull final Context context) {
         this(context, null);
@@ -64,6 +69,13 @@ final class MessageView extends FrameLayout {
         if (messageView != null) {
             if (backgroundColor != 0) messageView.setBackgroundColor(backgroundColor);
         }
+
+        if (pagerIndicator != null) {
+            if (indicatorTint != null) pagerIndicator.setmItemColor(indicatorTint);
+            if (indicatorSelectedTint != null) pagerIndicator.setmItemSelectedColor(indicatorSelectedTint);
+            if (indicatorItemScale != null) pagerIndicator.setmItemScale(indicatorItemScale);
+            if (indicatorItemSize != null) pagerIndicator.setmItemSize(indicatorItemSize);
+        }
     }
 
     public void setMessages(List<View> views){
@@ -86,6 +98,10 @@ final class MessageView extends FrameLayout {
         animationIn = params.animationIn;
         animationOut = params.animationOut;
         backgroundColor = params.backgroundColor;
+        indicatorTint = params.indicatorTint;
+        indicatorSelectedTint = params.indicatorSelectedTint;
+        indicatorItemSize = params.indicatorItemSize;
+        indicatorItemScale = params.indicatorItemScale;
 
         initViews(params.customView);
         setMessages(params.messages);

@@ -64,6 +64,22 @@ public class ViewPagerIndicator
 		}
 	}
 
+	public void setmItemColor(int mItemColor) {
+		this.mItemColor = mItemColor;
+	}
+
+	public void setmItemSelectedColor(int mItemSelectedColor) {
+		this.mItemSelectedColor = mItemSelectedColor;
+	}
+
+	public void setmItemScale(float mItemScale) {
+		this.mItemScale = mItemScale;
+	}
+
+	public void setmItemSize(int mItemSize) {
+		this.mItemSize = mItemSize;
+	}
+
 	private void createEditModeLayout() {
 		for (int i = 0; i < 5; ++i) {
 			final FrameLayout boxedItem = createBoxedItem(i);
