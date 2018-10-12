@@ -1,50 +1,56 @@
 package com.arthursaveliev.messageview.sample;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.arthursaveliev.messageview.MessageBar;
+import com.arthursaveliev.messageview.MessageView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
-  private MessageBar messageBar;
+  LinearLayout linearLayout;
+  MessageView messageView;
+
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    Button button = findViewById(R.id.button);
+    TextView btnShow = findViewById(R.id.textView2);
+    TextView btnHide = findViewById(R.id.textView5);
+    linearLayout = findViewById(R.id.parent);
+    messageView = findViewById(R.id.messageView);
 
-    button.setOnClickListener(new View.OnClickListener() {
+
+    final List<View> messages = new ArrayList<>();
+    for (int i = 0; i < 5; i++) {
+      View v = LayoutInflater.from(MainActivity.this)
+          .inflate(R.layout.layout_error, null, false);
+      TextView txtError = v.findViewById(R.id.textView);
+      txtError.setText("This is error " + i);
+      messages.add(v);
+    }
+    messageView.setMessages(messages);
+
+    btnShow.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
-
-        List<View> messages = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-          View v = LayoutInflater.from(MainActivity.this)
-              .inflate(R.layout.layout_error, null, false);
-          TextView txtError = v.findViewById(R.id.textView);
-          txtError.setText("This is error " + i);
-          txtError.setOnClickListener(MainActivity.this);
-          messages.add(v);
-        }
-        messageBar = MessageBar.build(MainActivity.this)
-            .addMessages(messages)
-            .setBackgroundColor(getResources().getColor(R.color.default_action_color))
-            .create();
-        messageBar.show();
+        TransitionManager.beginDelayedTransition(linearLayout);
+        messageView.show();
+      }
+    });
+    btnHide.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View view) {
+        TransitionManager.beginDelayedTransition(linearLayout);
+        messageView.hide();
       }
     });
   }
 
-  @Override public void onClick(View view) {
-    if (messageBar != null) {
-      MessageBar.dismiss(MainActivity.this);
-    }
-  }
 }

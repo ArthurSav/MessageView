@@ -27,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
-        app:delimiterSize="8dp"
+        app:delimiterSize="@dimen/viewpager_delimiter_size"
         app:itemScale="1.5"
-        app:itemSize="6dp"
+        app:itemSize="@dimen/viewpager_item_size"
         />
   </LinearLayout>
 </LinearLayout>

@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name = "ViewPagerIndicator">
-        <attr name = "itemSize" format = "dimension" />
-        <attr name = "itemScale" format = "float" />
-        <attr name = "itemSelectedTint" format = "color" />
-        <attr name = "itemTint" format = "color" />
-        <attr name = "delimiterSize" format = "dimension" />
-        <attr name = "itemIcon" format = "reference" />
-    </declare-styleable>
+
+  <attr format="dimension" name="itemSize"/>
+  <attr format="float" name="itemScale"/>
+  <attr format="color" name="itemSelectedTint"/>
+  <attr format="color" name="itemTint"/>
+  <attr format="dimension" name="delimiterSize"/>
+  <attr format="reference" name="itemIcon"/>
+  <attr name="background_color" format="color" />
+
+  <declare-styleable name="ViewPagerIndicator">
+    <attr name="itemSize"/>
+    <attr name="itemScale"/>
+    <attr name="itemSelectedTint"/>
+    <attr name="itemTint"/>
+    <attr name="delimiterSize"/>
+    <attr name="itemIcon"/>
+  </declare-styleable>
+
+
+  <declare-styleable name="MessageView">
+    <attr name="background_color" />
+    <attr name="itemSize"/>
+    <attr name="itemScale"/>
+    <attr name="itemSelectedTint"/>
+    <attr name="itemTint"/>
+    <attr name="delimiterSize"/>
+    <attr name="itemIcon"/>
+  </declare-styleable>
 </resources>

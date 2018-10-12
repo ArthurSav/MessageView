@@ -7,19 +7,110 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     >
-
-  <Button
-      android:id="@+id/button"
-      android:layout_width="wrap_content"
-      android:layout_height="48dp"
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
       android:layout_marginBottom="8dp"
       android:layout_marginEnd="8dp"
       android:layout_marginLeft="8dp"
       android:layout_marginRight="8dp"
       android:layout_marginStart="8dp"
-      android:text="Click me"
+      android:layout_marginTop="8dp"
+      android:fillViewport="true"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      />
+      app:layout_constraintTop_toTopOf="parent"
+      >
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+      <com.arthursaveliev.messageview.MessageView
+          android:id="@+id/messageView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:visibility="gone"
+          />
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="#81c248"
+          android:gravity="center"
+          android:text="SHOW"
+          />
+      <TextView
+          android:id="@+id/textView5"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/default_bg_color"
+          android:gravity="center"
+          android:text="HIDE"
+          />
+      <TextView
+          android:id="@+id/textView4"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/default_action_color"
+          android:gravity="center"
+          android:text="Hello"
+          />
+      <TextView
+          android:id="@+id/textView3"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/colorAccent"
+          android:gravity="center"
+          android:text="Hello"
+          />
+
+      <TextView
+          android:id="@+id/textView44"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/default_action_color"
+          android:gravity="center"
+          android:text="Hello"
+          />
+      <TextView
+          android:id="@+id/textView33"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/colorAccent"
+          android:gravity="center"
+          android:text="Hello"
+          />
+      <TextView
+          android:id="@+id/textView444"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/default_action_color"
+          android:gravity="center"
+          android:text="Hello"
+          />
+      <TextView
+          android:id="@+id/textView333"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"
+          android:layout_margin="10dp"
+          android:background="@color/colorAccent"
+          android:gravity="center"
+          android:text="Hello"
+          />
+    </LinearLayout>
+  </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
